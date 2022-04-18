@@ -38,7 +38,7 @@ namespace RmgTask.Repository
 
         public async Task<List<Employee>> GetEmployeesAsync()
         {
-            var employees = await _employeeDbContext.Employees.ToListAsync();
+            var employees = await _employeeDbContext.Employees.AsNoTracking().ToListAsync();
             return employees;
         }
 
