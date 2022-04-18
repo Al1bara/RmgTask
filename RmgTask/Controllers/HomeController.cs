@@ -40,6 +40,25 @@ namespace RmgTask.Controllers
             }
         }
 
+        public async Task<IActionResult> Delete(Guid id)
+        {
+            await _employeeRepository.DeleteAsync(id);
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Edit(Guid Id)
+        {
+            var employee = await _employeeRepository.GetEmployeeAsync(Id);
+            return View(employee);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(Employee employee)
+        {
+            await _employeeRepository.UpdateAsync(employee);
+            return RedirectToAction("Index");
+        }
+
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

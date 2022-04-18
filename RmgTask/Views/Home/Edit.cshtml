@@ -1,9 +1,13 @@
 ﻿@model Employee
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
+@{
+    ViewData["Title"] = "Edit Employee";
+}
+
 <h3>Enter a customer name:</h3>
 
-<form method="post">
+<form method="post" asp-action="Edit">
     <div class="row">
     Name:
     <input asp-for="@Model.Name" />

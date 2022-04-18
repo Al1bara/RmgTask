@@ -16,6 +16,7 @@ namespace RmgTask.Repository
 
         public async Task CreateAsync(Employee employee)
         {
+            employee.Id = Guid.NewGuid();
             await _employeeDbContext.AddAsync(employee);
             await _employeeDbContext.SaveChangesAsync();
         }
@@ -30,6 +31,11 @@ namespace RmgTask.Repository
             }
         }
 
+        public async Task<Employee> GetEmployeeAsync(Guid Id)
+        {
+            return await _employeeDbContext.Employees.FindAsync(Id);
+        }
+
         public async Task<List<Employee>> GetEmployeesAsync()
         {
             var employees = await _employeeDbContext.Employees.ToListAsync();
@@ -38,10 +44,10 @@ namespace RmgTask.Repository
 
         public async Task UpdateAsync(Employee employee)
         {
-            Employee employer = _employeeDbContext.Employees.Find(employee.Id);
-            if (employer != null)
+            bool isExistEmployee = await _employeeDbContext.Employees.AsNoTracking().AnyAsync(e => e.Id == employee.Id);
+            if (isExistEmployee)
             {
-                _employeeDbContext.Update(employer);
+                _employeeDbContext.Update(employee);
                 await _employeeDbContext.SaveChangesAsync();
             }
         }
