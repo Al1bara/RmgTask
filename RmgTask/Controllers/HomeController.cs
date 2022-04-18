@@ -18,22 +18,29 @@ namespace RmgTask.Controllers
 
         public async Task<IActionResult> IndexAsync()
         {
-            await _employeeRepository.CreateAsync(new Employee
-            {
-                Id = Guid.NewGuid(),
-                Name = "a",
-                Address = "cscdcc",
-                Phone = "0536813995",
-                Salary = 150000
-            });
             var emp = await _employeeRepository.GetEmployeesAsync();
-            return View();
+            return View(emp);
         }
 
         public IActionResult Privacy()
         {
             return View();
         }
+
+        public async Task<IActionResult> CreateUserAsync(Employee? employee)
+        {
+            if (employee.Name == null)
+            {
+                return View();
+            }
+            else
+            {
+                await _employeeRepository.CreateAsync(employee);
+                return RedirectToAction("Index");
+            }
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

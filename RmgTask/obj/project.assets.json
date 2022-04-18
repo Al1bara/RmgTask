@@ -1860,19 +1860,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\albar\\.nuget\\packages\\": {}
+    "C:\\Users\\albara\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\albar\\source\\repos\\RmgTask\\RmgTask\\RmgTask.csproj",
+      "projectUniqueName": "C:\\Users\\albara\\Desktop\\shit\\Assis\\RmgTask\\RmgTask\\RmgTask.csproj",
       "projectName": "RmgTask",
-      "projectPath": "C:\\Users\\albar\\source\\repos\\RmgTask\\RmgTask\\RmgTask.csproj",
-      "packagesPath": "C:\\Users\\albar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\albar\\source\\repos\\RmgTask\\RmgTask\\obj\\",
+      "projectPath": "C:\\Users\\albara\\Desktop\\shit\\Assis\\RmgTask\\RmgTask\\RmgTask.csproj",
+      "packagesPath": "C:\\Users\\albara\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\albara\\Desktop\\shit\\Assis\\RmgTask\\RmgTask\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\albar\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\albara\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1931,7 +1931,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.102\\RuntimeIdentifierGraph.json"
       }
     }
   }
